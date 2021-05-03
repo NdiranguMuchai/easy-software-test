@@ -23,7 +23,7 @@ public class Loan {
     private Date loanDueDate;
     @JsonIgnore
     @ManyToOne
-    private Customer customer;
+    private Customer loanee;
 
     public UUID getId() {
         return id;
@@ -73,11 +73,11 @@ public class Loan {
         this.loanDueDate = loanDueDate;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getLoanee() {
+        return loanee;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setLoanee(Customer customer) {
+        this.loanee = customer;
     }
 }

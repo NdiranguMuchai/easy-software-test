@@ -22,7 +22,7 @@ public class Customer {
      */
     private String customerId;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "loanee")
     private List<Loan> loans = new LinkedList<>();
 
     public UUID getId() {
