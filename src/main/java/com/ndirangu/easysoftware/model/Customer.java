@@ -16,7 +16,12 @@ public class Customer {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     @GeneratedValue(generator = "uuid")
     private UUID id;
+
+    /**
+     * customerId is different from the object ID
+     */
     private String customerId;
+
     @OneToMany(mappedBy = "customer")
     private List<Loan> loans = new LinkedList<>();
 
