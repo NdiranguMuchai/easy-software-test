@@ -25,6 +25,10 @@ public class Customer {
     @OneToMany(mappedBy = "loanee")
     private List<Loan> loans = new LinkedList<>();
 
+    public void addLoan(Loan loan){
+        loans.add(loan);
+    }
+
     public UUID getId() {
         return id;
     }
@@ -48,4 +52,6 @@ public class Customer {
     public void setLoans(List<Loan> loans) {
         this.loans = loans;
     }
+
+
 }
