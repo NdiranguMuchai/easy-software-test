@@ -1,4 +1,4 @@
-#Easy Software API
+# Easy Software API
 This project was generated from [Spring Initializer](https://start.spring.io/).
 
 ## Prerequisites
