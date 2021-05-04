@@ -44,7 +44,7 @@ public class LoanController {
         return loanDTOConverter.convertLoanTODTO(loanService.save(loanToSave));
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     @ApiOperation(value = "Finds a loan object given its ID")
     public LoanDTO findOne(@PathVariable UUID id) throws Exception{
         Loan loan = loanService.findById(id);
@@ -58,6 +58,12 @@ public class LoanController {
                 .stream()
                 .map(loanDTOConverter::convertLoanTODTO)
                 .collect(Collectors.toList());
+    }
+
+    @PutMapping("/{id}")
+    @ApiOperation(value = "Updates a loan object given its ID")
+    public LoanDTO update(@PathVariable UUID id)throws Exception{
+        return loanDTOConverter.convertLoanTODTO(loanService.update(id));
     }
 
 }

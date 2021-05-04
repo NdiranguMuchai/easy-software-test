@@ -49,7 +49,12 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public Loan update(UUID id) throws Exception {
        Loan loan = loanRepository.findById(id).orElseThrow(()-> new Exception("Loan with id "+id+" not found"));
-        loan.setId(id);
+
+        loan.setLoanee(loan.getLoanee());
+        loan.setLoanCode(loan.getLoanCode());
+        loan.setLoanDate(loan.getLoanDate());
+        loan.setTransactionId(loan.getTransactionId());
+
         return loanRepository.save(loan);
     }
 
