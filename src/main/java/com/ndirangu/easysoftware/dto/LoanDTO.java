@@ -1,6 +1,6 @@
 package com.ndirangu.easysoftware.dto;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 /**
@@ -11,9 +11,9 @@ public class LoanDTO {
     private String transactionId;
     private Double amount;
     private Long loanCode;
-    private Date loanDate;
-    private Date loanDueDate;
-    private UUID loaneeId;
+    private LocalDate loanDate;
+    private LocalDate loanDueDate;
+    private String customerId;
 
     public UUID getId() {
         return id;
@@ -47,27 +47,28 @@ public class LoanDTO {
         this.loanCode = loanCode;
     }
 
-    public Date getLoanDate() {
+    public LocalDate getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(Date loanDate) {
+    public void setLoanDate(LocalDate loanDate) {
         this.loanDate = loanDate;
     }
 
-    public Date getLoanDueDate() {
+    public LocalDate getLoanDueDate() {
         return loanDueDate;
     }
 
-    public void setLoanDueDate(Date loanDueDate) {
+    public void setLoanDueDate(LocalDate loanDueDate) {
         this.loanDueDate = loanDueDate;
     }
 
-    public UUID getLoaneeId() {
-        return loaneeId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setLoaneeId(UUID loaneeId) {
-        this.loaneeId = loaneeId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
+
 }

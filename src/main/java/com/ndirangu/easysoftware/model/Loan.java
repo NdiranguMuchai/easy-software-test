@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -19,8 +19,8 @@ public class Loan {
     private String transactionId;
     private Double amount;
     private Long loanCode;
-    private Date loanDate;
-    private Date loanDueDate;
+    private LocalDate loanDate;
+    private LocalDate loanDueDate;
     @JsonIgnore
     @ManyToOne
     private Customer loanee;
@@ -57,19 +57,19 @@ public class Loan {
         this.loanCode = loanCode;
     }
 
-    public Date getLoanDate() {
+    public LocalDate getLoanDate() {
         return loanDate;
     }
 
-    public void setLoanDate(Date loanDate) {
+    public void setLoanDate(LocalDate loanDate) {
         this.loanDate = loanDate;
     }
 
-    public Date getLoanDueDate() {
+    public LocalDate getLoanDueDate() {
         return loanDueDate;
     }
 
-    public void setLoanDueDate(Date loanDueDate) {
+    public void setLoanDueDate(LocalDate loanDueDate) {
         this.loanDueDate = loanDueDate;
     }
 

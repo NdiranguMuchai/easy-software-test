@@ -8,7 +8,7 @@ import java.util.UUID;
  */
 public class CustomerDTO {
     private UUID id;
-    private UUID customerId;
+    private String customerId;
     private List<UUID> loanIds;
 
     public UUID getId() {
@@ -19,11 +19,11 @@ public class CustomerDTO {
         this.id = id;
     }
 
-    public UUID getCustomerId() {
+    public String getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(UUID customerId) {
+    public void setCustomerId(String customerId) {
         this.customerId = customerId;
     }
 

@@ -12,7 +12,9 @@ public class LoanDTOConverter {
         LoanDTO loanDTO = new LoanDTO();
         BeanUtils.copyProperties(loan, loanDTO);
 
-        loanDTO.setLoaneeId(loan.getLoanee().getId());
+        loanDTO.setCustomerId(loan.getLoanee().getCustomerId());
+//        loanDTO.setCustomerObjectId(loan.getLoanee().getId());
+
 
         return loanDTO;
     }
