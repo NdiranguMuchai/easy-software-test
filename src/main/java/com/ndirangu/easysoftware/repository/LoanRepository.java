@@ -7,5 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface LoanRepository extends JpaRepository<Loan, UUID> {
-List<Loan> findAllByLoaneeId(UUID loaneeId);
+
+    List<Loan> findAllByLoanee_CustomerId(String customerId);
+
 }

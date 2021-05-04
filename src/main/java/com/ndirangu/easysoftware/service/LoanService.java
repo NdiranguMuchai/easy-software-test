@@ -11,6 +11,6 @@ public interface LoanService {
     Loan save(Loan loan);
     Page<Loan> list(Pageable pageable);
     Loan findById(UUID id) throws Exception;
-    List<Loan> findByLoaneeId(UUID loaneeId);
     Loan update(UUID id) throws Exception;
+    List<Loan> findByCustomerId(String customerId);
 }

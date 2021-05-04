@@ -8,7 +8,9 @@ import com.ndirangu.easysoftware.service.CustomerService;
 import com.ndirangu.easysoftware.service.LoanService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/loan")
@@ -41,5 +43,12 @@ public class LoanController {
         return loanDTOConverter.convertLoanTODTO(loan);
     }
 
+    @GetMapping("/customer/{customerId}")
+    public List<LoanDTO> findByCustomer(@PathVariable String customerId){
+        return loanService.findByCustomerId(customerId)
+                .stream()
+                .map(loanDTOConverter::convertLoanTODTO)
+                .collect(Collectors.toList());
+    }
 
 }

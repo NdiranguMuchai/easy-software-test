@@ -47,15 +47,14 @@ public class LoanServiceImpl implements LoanService {
     }
 
     @Override
-    public List<Loan> findByLoaneeId(UUID loaneeId) {
-        return loanRepository.findAllByLoaneeId(loaneeId);
-    }
-
-    @Override
     public Loan update(UUID id) throws Exception {
        Loan loan = loanRepository.findById(id).orElseThrow(()-> new Exception("Loan with id "+id+" not found"));
         loan.setId(id);
         return loanRepository.save(loan);
     }
 
+    @Override
+    public List<Loan> findByCustomerId(String customerId) {
+        return loanRepository.findAllByLoanee_CustomerId(customerId);
+    }
 }
